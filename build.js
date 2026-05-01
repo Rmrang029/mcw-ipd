@@ -28,9 +28,10 @@ const PASSWORD = process.env.MCW_GATE_PASSWORD || 'mcw2026';
 const STATICRYPT_OPTS = [
   '--short',
   '--remember', '0',                      // session-only (not persisted to localStorage)
+  '--template', path.join(SRC, 'gate-template.html'),  // custom MCW-branded gate
   '--template-title', 'MCW IPD — Confidential Preview',
-  '--template-color-primary', '#00863F',  // MCW Green
-  '--template-color-secondary', '#FFFFFF',
+  '--template-color-primary', '#00863F',  // MCW Green (button)
+  '--template-color-secondary', '#00863F',// MCW Green (page background behind the card)
   '--template-button', 'Enter',
   '--template-instructions', 'Enter the password to view this confidential MCW preview.',
   '--template-placeholder', 'Password',
@@ -58,6 +59,7 @@ function walkHtml(dir, base = '') {
   const out = [];
   for (const item of fs.readdirSync(dir)) {
     if (item === 'assets') continue;
+    if (item === 'gate-template.html') continue;  // not a content page; used by staticrypt
     const full = path.join(dir, item);
     const rel = base ? path.join(base, item) : item;
     if (fs.statSync(full).isDirectory()) {

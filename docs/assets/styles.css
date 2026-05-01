@@ -152,16 +152,12 @@ section.tint { background: var(--green-tint); }
 }
 .brand:hover { color: var(--green); }
 .brand .mark {
-  width: 38px;
   height: 38px;
-  background: var(--green);
-  color: var(--white);
-  display: grid;
-  place-items: center;
-  border-radius: 3px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  width: auto;
+  max-width: 78px;
+  display: block;
+  background: transparent;
+  border-radius: 0;
 }
 .brand .brand-name {
   display: flex; flex-direction: column; line-height: 1.1;
@@ -693,16 +689,10 @@ nav.primary a.active::after {
   text-align: center;
 }
 .gate-card .mark-lg {
-  width: 64px; height: 64px;
-  background: var(--green);
-  color: var(--white);
-  display: inline-grid;
-  place-items: center;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.5rem;
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
 }
 .gate-card h1 {
   font-size: 1.45rem;
