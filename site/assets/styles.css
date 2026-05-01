@@ -152,9 +152,12 @@ section.tint { background: var(--green-tint); }
 }
 .brand:hover { color: var(--green); }
 .brand .mark {
+  /* Native aspect ratio of the signature logo is 474:240. */
   height: 40px;
-  width: auto;
-  flex-shrink: 0;        /* prevent flexbox from squishing the logo horizontally */
+  width: 79px;           /* lock width so flexbox cannot distort the logo */
+  min-width: 79px;
+  flex-shrink: 0;
+  flex-grow: 0;
   display: block;
   background: transparent;
   border-radius: 0;
