@@ -1,0 +1,14 @@
+{
+  "name": "mcw-ipd-microsite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCW Vancouver IPD Experience — confidential static microsite, password-gated for GitHub Pages.",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "cd site && python3 -m http.server 8888",
+    "preview:built": "cd docs && python3 -m http.server 8889"
+  },
+  "devDependencies": {
+    "staticrypt": "^3.5.4"
+  }
+}
