@@ -391,37 +391,42 @@ nav.primary a.active::after {
   border-color: var(--green);
 }
 .project-card .thumb {
-  height: 150px;
-  background: var(--green);
+  height: 180px;
+  background-color: var(--green);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: grid;
-  place-items: center;
+  place-items: end stretch;
   color: var(--white);
-  text-align: center;
-  padding: 1.2rem;
+  text-align: left;
+  padding: 1rem 1.25rem;
   position: relative;
+  overflow: hidden;
 }
-.project-card .thumb::after {
+.project-card .thumb::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
-  background-size: 8px 8px;
-  opacity: 0.4;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 35%, rgba(35,31,32,0.75) 100%);
+  z-index: 0;
 }
 .project-card .thumb > div { position: relative; z-index: 1; }
 .project-card .thumb .label {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .project-card .thumb .name {
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--white);
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   line-height: 1.25;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.55);
 }
 .project-card .body {
   padding: 1.25rem 1.5rem 1.5rem;
@@ -488,18 +493,59 @@ nav.primary a.active::after {
 /* ---------- Project detail page ---------- */
 
 .project-hero {
-  background: var(--green);
+  position: relative;
+  background-color: var(--green);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--white);
-  padding: 3rem 0 2.75rem;
+  padding: 5rem 0 3.5rem;
+  overflow: hidden;
 }
-.project-hero .eyebrow { color: rgba(255,255,255,0.9); }
-.project-hero h1 { color: var(--white); font-size: 2rem; }
+.project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,21,40,0.45) 0%, rgba(0,106,49,0.85) 100%);
+  z-index: 0;
+}
+.project-hero .container {
+  position: relative;
+  z-index: 1;
+}
+.project-hero .eyebrow { color: rgba(255,255,255,0.95); }
+.project-hero h1 {
+  color: var(--white);
+  font-size: 2.1rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
 .project-hero .meta {
   display: flex; flex-wrap: wrap; gap: 1.5rem;
-  margin-top: 1rem; color: rgba(255,255,255,0.9);
+  margin-top: 1rem; color: rgba(255,255,255,0.95);
   font-size: 0.95rem;
 }
 .project-hero .meta strong { color: var(--white); font-weight: 700; }
+
+/* Inline feature image used inside a project page body */
+.feature-image {
+  margin: 2.25rem 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.feature-image .caption {
+  padding: 0.7rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--black-80);
+  border-top: 1px solid var(--border-soft);
+  background: var(--surface);
+}
 
 .project-section {
   padding: 2.5rem 0;
