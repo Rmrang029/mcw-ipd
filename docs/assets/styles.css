@@ -1244,8 +1244,8 @@ table.mcw td strong { color: var(--black-100); }
   display: block;
 }
 .canada-map .country-shape {
-  fill: var(--surface);
-  stroke: var(--border);
+  fill: var(--green-tint);
+  stroke: var(--green);
   stroke-width: 1.5;
 }
 .canada-map .city-dot {
