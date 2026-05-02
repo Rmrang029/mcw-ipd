@@ -199,9 +199,13 @@ nav.primary a.active::after {
 .nav-toggle { display: none; }
 
 @media (max-width: 800px) {
-  /* Mobile nav: anchor below the header, slide open via max-height.
-     This avoids the previous translateY-bleed bug where a 5-item menu's
-     bottom edge stayed visible after a -110% transform. */
+  /* Mobile nav: bulletproof hide using FOUR independent mechanisms so no
+     single CSS quirk on any browser can leak the closed menu through:
+       1. max-height: 0     — zero geometry
+       2. overflow: hidden  — clip any sub-pixel rounding
+       3. visibility:hidden — invisible to compositor
+       4. opacity: 0        — fully transparent
+     Plus pointer-events:none so taps fall through to elements behind. */
   nav.primary {
     position: absolute;
     top: 100%;          /* sit immediately below the sticky header */
@@ -212,13 +216,27 @@ nav.primary a.active::after {
     padding: 0;
     max-height: 0;
     overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     border-bottom: 0 solid var(--green);
-    transition: max-height 0.25s ease, border-bottom-width 0s linear 0.25s;
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      visibility 0s linear 0.25s,
+      border-bottom-width 0s linear 0.25s;
   }
   nav.primary.open {
     max-height: 80vh;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
     border-bottom-width: 1.5pt;
-    transition: max-height 0.25s ease, border-bottom-width 0s linear 0s;
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      visibility 0s linear 0s,
+      border-bottom-width 0s linear 0s;
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   }
   nav.primary a {
