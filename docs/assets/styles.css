@@ -199,29 +199,40 @@ nav.primary a.active::after {
 .nav-toggle { display: none; }
 
 @media (max-width: 800px) {
+  /* Mobile nav: anchor below the header, slide open via max-height.
+     This avoids the previous translateY-bleed bug where a 5-item menu's
+     bottom edge stayed visible after a -110% transform. */
   nav.primary {
     position: absolute;
-    top: 72px; left: 0; right: 0;
+    top: 100%;          /* sit immediately below the sticky header */
+    left: 0; right: 0;
     background: var(--white);
     flex-direction: column;
     gap: 0;
     padding: 0;
-    border-bottom: 1.5pt solid var(--green);
-    transform: translateY(-110%);
-    transition: transform .25s ease;
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 0 solid var(--green);
+    transition: max-height 0.25s ease, border-bottom-width 0s linear 0.25s;
   }
-  nav.primary.open { transform: translateY(0); }
+  nav.primary.open {
+    max-height: 80vh;
+    border-bottom-width: 1.5pt;
+    transition: max-height 0.25s ease, border-bottom-width 0s linear 0s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  }
   nav.primary a {
     padding: 14px 1.5rem;
     border-bottom: 1px solid var(--border);
     width: 100%;
   }
+  nav.primary a:last-child { border-bottom: none; }
   nav.primary a.active::after { display: none; }
   .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px; height: 40px;
+    width: 44px; height: 44px;     /* WCAG / iOS HIG minimum tap target */
     border: 1px solid var(--border);
     background: var(--white);
     border-radius: 3px;
