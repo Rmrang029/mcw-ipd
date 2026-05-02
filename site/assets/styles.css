@@ -1251,7 +1251,7 @@ table.mcw td strong { color: var(--black-100); }
 .canada-map .city-dot {
   fill: var(--green);
   stroke: var(--white);
-  stroke-width: 2;
+  stroke-width: 5;
   cursor: pointer;
   transition: r 0.15s ease;
 }
@@ -1259,12 +1259,19 @@ table.mcw td strong { color: var(--black-100); }
 .canada-map .city-dot.featured { fill: var(--green-dark); }
 .canada-map .city-label {
   font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 32px;        /* sized for the 1357-wide viewBox */
+  font-weight: 700;
   fill: var(--black-100);
   pointer-events: none;
+  paint-order: stroke fill;
+  stroke: var(--white);
+  stroke-width: 5;
+  stroke-linejoin: round;
 }
-.canada-map .city-label.featured { fill: var(--green-dark); }
+.canada-map .city-label.featured {
+  fill: var(--green-dark);
+  font-size: 36px;
+}
 .canada-map .map-legend {
   position: absolute;
   bottom: 1rem;

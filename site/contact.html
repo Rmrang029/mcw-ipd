@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Contact — MCW Vancouver IPD</title>
-  <link rel="stylesheet" href="assets/styles.css?v=6" />
+  <link rel="stylesheet" href="assets/styles.css?v=7" />
 </head>
 <body>
   <header class="site-header">
@@ -94,165 +94,48 @@
       <p class="lede">If your project sits outside BC, we can introduce you to the appropriate MCW office. The Vancouver team coordinates BC and Yukon pursuits.</p>
 
       <div class="canada-map reveal" aria-label="MCW office locations across Canada">
-        <svg viewBox="0 0 1100 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Canada showing MCW office locations">
+        <svg viewBox="0 0 1357 1137" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Map of Canada showing MCW office locations" preserveAspectRatio="xMidYMid meet">
+          <!-- Real Canada outline (MCW Green) — embedded as image element. -->
+          <image href="assets/canada-outline.png" x="0" y="0" width="1357" height="1137"/>
 
-          <!-- Mainland Canada — built from real geographic vertices to
-               capture the iconic silhouette: tapered Pacific west, wide
-               prairie middle, Labrador peninsula extending NE, Maritimes
-               peninsula reaching SE, Bay of Fundy notch, Great-Lakes-
-               irregular southern border, and the long flat 49th parallel. -->
-          <path class="country-shape" d="
-            M 130 478
-            L 130 460
-            L 115 420
-            L 105 380
-            L 95 340
-            L 90 295
-            L 95 250
-            L 105 215
-            L 95 180
-            L 80 150
-            L 95 120
-            L 130 105
-            L 200 100
-            L 290 95
-            L 380 100
-            L 470 95
-            L 560 105
-            L 660 130
-            L 720 150
-            L 760 175
-            L 815 195
-            L 850 230
-            L 870 280
-            L 850 320
-            L 815 355
-            L 780 385
-            L 745 410
-            L 720 430
-            L 720 460
-            L 760 455
-            L 800 465
-            L 820 490
-            L 805 510
-            L 770 510
-            L 750 495
-            L 745 480
-            L 725 485
-            L 705 490
-            L 685 480
-            L 670 485
-            L 650 500
-            L 625 495
-            L 605 505
-            L 580 510
-            L 560 500
-            L 535 510
-            L 515 495
-            L 495 500
-            L 475 490
-            L 455 495
-            L 440 490
-            L 410 488
-            L 350 488
-            L 280 488
-            L 200 488
-            L 130 488
-            Z
-          "/>
+          <!-- Office locations. Coordinates are pixel-aligned with the
+               canada-outline.png image (1357 x 1137). -->
 
-          <!-- Hudson Bay — large white-filled body carved into the upper-
-               middle. Slightly wider at top, narrowing toward south. -->
-          <path d="
-            M 460 130
-            L 445 175
-            L 440 230
-            L 460 285
-            L 500 315
-            L 555 320
-            L 600 300
-            L 630 255
-            L 635 200
-            L 620 150
-            L 595 130
-            Z
-          " fill="#FFFFFF" stroke="#999999" stroke-width="1.2"/>
-
-          <!-- Vancouver Island (Pacific coast, separate small island) -->
-          <path class="country-shape" d="
-            M 75 425
-            L 55 440
-            L 50 470
-            L 65 485
-            L 95 478
-            L 105 455
-            L 95 430
-            Z
-          "/>
-
-          <!-- Newfoundland (large Atlantic island, east of Labrador) -->
-          <path class="country-shape" d="
-            M 905 320
-            L 880 340
-            L 880 380
-            L 905 410
-            L 945 420
-            L 975 410
-            L 985 380
-            L 975 345
-            L 950 320
-            L 925 315
-            Z
-          "/>
-
-          <!-- Prince Edward Island (small island in the Gulf of St. Lawrence) -->
-          <path class="country-shape" d="
-            M 790 470
-            L 815 470
-            L 825 478
-            L 815 484
-            L 790 482
-            L 783 476
-            Z
-          "/>
-
-          <!-- Office locations. -->
-
-          <!-- Vancouver (lead — featured) -->
-          <circle class="city-dot featured" cx="120" cy="445" r="10"/>
-          <text class="city-label featured" x="120" y="500" text-anchor="middle">Vancouver</text>
+          <!-- Vancouver (lead — featured, larger dot) -->
+          <circle class="city-dot featured" cx="175" cy="880" r="18"/>
+          <text class="city-label featured" x="175" y="930" text-anchor="middle">Vancouver</text>
 
           <!-- Calgary -->
-          <circle class="city-dot" cx="230" cy="445" r="7"/>
-          <text class="city-label" x="230" y="500" text-anchor="middle">Calgary</text>
+          <circle class="city-dot" cx="350" cy="940" r="13"/>
+          <text class="city-label" x="350" y="985" text-anchor="middle">Calgary</text>
 
           <!-- Edmonton -->
-          <circle class="city-dot" cx="240" cy="385" r="7"/>
-          <text class="city-label" x="240" y="375" text-anchor="middle">Edmonton</text>
+          <circle class="city-dot" cx="360" cy="850" r="13"/>
+          <text class="city-label" x="360" y="838" text-anchor="middle">Edmonton</text>
 
           <!-- Winnipeg -->
-          <circle class="city-dot" cx="430" cy="465" r="7"/>
-          <text class="city-label" x="430" y="500" text-anchor="middle">Winnipeg</text>
+          <circle class="city-dot" cx="615" cy="920" r="13"/>
+          <text class="city-label" x="615" y="965" text-anchor="middle">Winnipeg</text>
 
           <!-- Toronto -->
-          <circle class="city-dot" cx="650" cy="478" r="7"/>
-          <text class="city-label" x="650" y="500" text-anchor="middle">Toronto</text>
+          <circle class="city-dot" cx="850" cy="1020" r="13"/>
+          <text class="city-label" x="850" y="1080" text-anchor="middle">Toronto</text>
 
           <!-- Ottawa -->
-          <circle class="city-dot" cx="700" cy="466" r="7"/>
-          <text class="city-label" x="700" y="455" text-anchor="middle">Ottawa</text>
+          <circle class="city-dot" cx="920" cy="970" r="13"/>
+          <text class="city-label" x="918" y="958" text-anchor="end">Ottawa</text>
 
           <!-- Saint John -->
-          <circle class="city-dot" cx="775" cy="475" r="7"/>
-          <text class="city-label" x="745" y="498" text-anchor="end">Saint John</text>
+          <circle class="city-dot" cx="1095" cy="1015" r="13"/>
+          <text class="city-label" x="1075" y="1050" text-anchor="end">Saint John</text>
 
           <!-- Moncton -->
-          <circle class="city-dot" cx="800" cy="465" r="7"/>
-          <text class="city-label" x="800" y="455" text-anchor="middle">Moncton</text>
+          <circle class="city-dot" cx="1140" cy="985" r="13"/>
+          <text class="city-label" x="1145" y="970" text-anchor="start">Moncton</text>
 
           <!-- Halifax -->
-          <circle class="city-dot" cx="810" cy="490" r="7"/>
-          <text class="city-label" x="845" y="498" text-anchor="start">Halifax</text>
+          <circle class="city-dot" cx="1180" cy="1025" r="13"/>
+          <text class="city-label" x="1200" y="1062" text-anchor="start">Halifax</text>
         </svg>
 
         <div class="map-legend">
