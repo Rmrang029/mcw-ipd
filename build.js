@@ -29,7 +29,7 @@ const STATICRYPT_OPTS = [
   '--short',
   '--remember', '0',                      // session-only (not persisted to localStorage)
   '--template', path.join(SRC, 'gate-template.html'),  // custom MCW-branded gate
-  '--template-title', 'MCW IPD — Confidential Preview',
+  '--template-title', 'MCW VEC — Confidential Preview',
   '--template-color-primary', '#00863F',  // MCW Green (button)
   '--template-color-secondary', '#00863F',// MCW Green (page background behind the card)
   '--template-button', 'Enter',

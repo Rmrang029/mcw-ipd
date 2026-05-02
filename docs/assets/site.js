@@ -20,20 +20,37 @@
   });
 
   // ---- Experience filter ----
+  // Supports multiple filter bars (e.g. sector + delivery model) combined with
+  // AND logic. A card is visible only if every bar's active filter is "all"
+  // or matches a tag on the card.
   document.addEventListener('DOMContentLoaded', function () {
-    var bar = document.querySelector('[data-filter-bar]');
-    if (!bar) return;
+    var bars = document.querySelectorAll('[data-filter-bar]');
+    if (!bars.length) return;
     var cards = document.querySelectorAll('[data-project]');
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('button[data-filter]');
-      if (!btn) return;
-      bar.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var f = btn.getAttribute('data-filter');
+
+    function applyFilters() {
+      // Collect active filter from each bar
+      var active = [];
+      bars.forEach(function (bar) {
+        var btn = bar.querySelector('button.active');
+        if (btn) active.push(btn.getAttribute('data-filter'));
+      });
       cards.forEach(function (card) {
         var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
-        var show = (f === 'all') || tags.indexOf(f) >= 0;
-        card.style.display = show ? '' : 'none';
+        var visible = active.every(function (f) {
+          return f === 'all' || tags.indexOf(f) >= 0;
+        });
+        card.style.display = visible ? '' : 'none';
+      });
+    }
+
+    bars.forEach(function (bar) {
+      bar.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-filter]');
+        if (!btn) return;
+        bar.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilters();
       });
     });
   });
