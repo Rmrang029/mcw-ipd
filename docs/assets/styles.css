@@ -143,13 +143,14 @@ section.tint { background: var(--green-tint); }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1.1rem;
   font-weight: 700;
   color: var(--black-100);
   border-bottom: none;
   font-size: 1rem;
   letter-spacing: 0.04em;
 }
+.site-footer .brand { gap: 1.25rem; }
 .brand:hover { color: var(--green); }
 .brand .mark {
   /* Native aspect ratio of the signature logo is 474:240. */
