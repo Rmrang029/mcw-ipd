@@ -927,7 +927,7 @@ table.mcw td strong { color: var(--black-100); }
   /* Header */
   .site-header .container { height: 64px; }
   .brand .brand-name .top { font-size: 0.88rem; }
-  .brand .brand-name .sub { font-size: 0.62rem; letter-spacing: 0.08em; }
+  .brand .brand-name .sub { font-size: 0.55rem; letter-spacing: 0.04em; }
   .nav-toggle {
     width: 44px;          /* WCAG touch target */
     height: 44px;
