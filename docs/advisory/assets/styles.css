@@ -1336,3 +1336,38 @@ table.mcw td strong { color: var(--black-100); }
   font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--green); font-weight: 700; margin-bottom: 0.5rem;
 }
+
+/* ============================================================
+   QC FIXES — July 2026 visual review
+   ============================================================ */
+
+/* Home stats row: markup uses .stats-row / .stat-n / .stat-l which
+   previously had no styles — numbers rendered as plain small text. */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.stat .stat-n {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+.stat .stat-l {
+  font-size: 0.9rem;
+  color: var(--black-80);
+  margin-top: 0.4rem;
+}
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 1rem 0.75rem; }
+  .stat .stat-n { font-size: 1.85rem; }
+}
+
+/* Footer copyright + cities lines: the .site-footer .container grid rule
+   was splitting their inline content into three grid columns. */
+.site-footer .footer-bottom,
+.site-footer .footer-cities {
+  display: block;
+}
